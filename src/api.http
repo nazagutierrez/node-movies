@@ -1,0 +1,35 @@
+### Recuperar todas las películas
+GET http://localhost:3030/movies
+
+### Recuperar película por ID
+GET http://localhost:3030/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+### Recuperar todas las películas por un género
+GET http://localhost:3030/movies?genre=Action
+
+### Crear una película con POST
+POST http://localhost:3030/movies
+Content-Type: application/json
+
+{
+    "title": "Papurri",
+    "year": 1994,
+    "director": "Frank Darabont",
+    "duration": 142,
+    "poster": "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp",
+    "genre": [
+      "Drama"
+    ],
+    "rate": 9.3
+}
+
+### Borrar una película con DELETE
+DELETE http://localhost:3030/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+### Editar parcialmente una pelicula con PATCH
+PATCH http://localhost:3030/movies/897a0953-2202-4a6c-a7ab-bc6b4d9144c7
+Content-Type: application/json
+
+{
+  "year": 2004
+}
